@@ -1,0 +1,30 @@
+--create a candle store database
+
+CREATE TABLE candle_store (id INTEGER PRIMARY KEY, name TEXT, scent_type TEXT, inventory INTEGER, wholesale INTEGER, retail INTEGER);
+
+INSERT INTO candle_store VALUES
+(1,"amr","sultry",6,12,24),
+(2,"jcw","floral",12,12,24),
+(3,"farmer's market morning","spring seasonal",3,13,26),
+(4,'woody leather and brandy','masculine',7,12,24),
+(5,'enneagram 1','enneagram',9,20,40),
+(6,'lake day', 'custom',0,11,22),
+(7,'one twenty main','custom',12,12,24),
+(8,'pumpkin latte','unreleased',0,11,22),
+(9,'pumpkin patch','fall seasonal',3,12,24),
+(10,"santa's sleigh",'discontinued',5,10,20),
+(11,'mpr','earthy',7,12,24),
+(12,'pmm','floral',8,13,26),
+(13,'spr','spa',4,12,24),
+(14,'haunted library','unreleased',0,13,26),
+(15,'petrichor','unreleased',0,15,30)
+;
+
+--display the database ordered by retail price
+
+SELECT * FROM candle_store
+ORDER BY retail ASC;
+
+--display which candles have an inventory of less than 7 
+
+SELECT name, inventory FROM candle_store WHERE inventory<7 ORDER BY inventory;
